@@ -23,4 +23,13 @@ module Faker
   def self.bothify(string)
     self.letterify(self.numerify(string))
   end
+
+  def self.random_string(length = rand(20))
+    string = ""
+    length.times do
+      #Printable characters lie in the range 32-126
+      string << rand(95) + 32
+    end
+    string
+  end
 end
